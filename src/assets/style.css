@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'made_tommy_softlight';
+    src: url('made_tommy_soft_light_personal_use-webfont.woff2') format('woff2'),
+        url('made_tommy_soft_light_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'soccer_leagueitalic';
+    src: url('soccer-league.italic-webfont.woff2') format('woff2'),
+        url('soccer-league.italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    padding: 1.5rem;
+    background-color: #000;
+    background-color: #0093E9;
+    background-image: linear-gradient(260deg, #0093E9 0%, #80D0C7 100%);
+}
+
+footer,
+header {
+    position: relative;
+    width: 100%;
+    margin: 0.75rem 0;
+    text-align: center;
+    font-family: 'soccer_leagueitalic';
+}
+
+header {
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+footer{
+    font-size: 0.8em;
+}
+
+.title-container {
+    width: 100%;
+    text-align: center
+}
+
+.news-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.news-list {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 1rem;
+    box-shadow: 6px 6px 5px #000000,
+        -2px -2px 4px #c6ebf5;
+    border-radius: 1rem;
+}
+
+@media only screen and (min-width:768px) {
+    .news-list {
+        width: 45%
+    }
+}
+
+.news-container {
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    padding: 1rem;
+    border: solid .125rem transparent;
+    border-radius: 1rem;
+}
+
+.news-title-container {
+    font-family: 'soccer_leagueitalic';
+    margin: .5rem 0;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 1; 
+    min-height: 3rem;
+}
+
+.news-img {
+    width: 100%;
+}
+
+.content-container {
+    font-family: 'made_tommy_softlight';
+    font-size: .85em;
+    margin: .5rem 0;
+}
