@@ -113,3 +113,18 @@ footer {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    /* Box shadow workaround */
+    box-shadow: 0 0 0 1px transparent;
+    /* Border workaround */
+    border: 1px solid #000;
+  }
+
+  .box:hover{
+    box-shadow:  0 0 0 1px black;
+    border-radius: 1rem;
+  }

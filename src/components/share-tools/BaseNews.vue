@@ -8,6 +8,10 @@
         </div>
       </div>
     </li>
+    <div class="box">
+  This is a box.
+</div>
+
   </div>
 </template>
 
