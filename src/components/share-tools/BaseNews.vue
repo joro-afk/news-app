@@ -4,11 +4,11 @@
       <div class="news-container">
         <div class="news-title-container">{{ stories.title }}</div>
         <div class="content-container">
-       <div>  {{stories.source}} </div>  <div> {{ stories.PublishedAt }}</div>
+          <div class="source">{{ stories.source }}</div>
+          <div>{{ stories.PublishedAt }}</div>
         </div>
       </div>
     </li>
-
   </div>
 </template>
 

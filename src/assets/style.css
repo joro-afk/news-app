@@ -114,6 +114,10 @@ footer {
     justify-content: space-between;
 }
 
+.source{
+    margin-inline-end: 0.5rem;
+}
+
 .box {
     width: 100px;
     height: 100px;
