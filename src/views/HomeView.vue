@@ -1,17 +1,14 @@
 <template>
-  <div class="home">
-<BaseNews />
-  </div>
+  <BaseNews />
 </template>
 
 <script>
-
-import BaseNews from '@/components/share-tools/BaseNews.vue'
+import BaseNews from "@/components/share-tools/BaseNews.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
-    BaseNews
-  }
-}
+    BaseNews,
+  },
+};
 </script>

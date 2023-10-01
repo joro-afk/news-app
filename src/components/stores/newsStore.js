@@ -1,38 +1,55 @@
 import { defineStore } from 'pinia';
+import axios from 'axios';
 
 export const useNewsStore = defineStore({
     id: "newsStore",
     state() {
         return {
             data: '',
-            news:'',
+            news: '',
+            location: '',
+            category: '',
         }
     },
 
     actions: {
         async setNews() {
-            const url = 'https://newsnow.p.rapidapi.com/topheadline';
             const options = {
                 method: 'POST',
+                url: 'https://newsnow.p.rapidapi.com/newsv2',
                 headers: {
                     'content-type': 'application/json',
                     'X-RapidAPI-Key': '869dd0e0bfmsh0cce425d64a68b4p159db5jsn25def7f3b22f',
                     'X-RapidAPI-Host': 'newsnow.p.rapidapi.com'
                 },
-                body: {}
+                data: {
+                    query: 'AI',
+                    page: 3,
+                    time_bounded: true,
+                    from_date: '01/02/2021',
+                    to_date: '05/06/2021',
+                    location: this.location,
+                    category: this.category,
+                    source: ''
+                }
             };
 
             try {
-                const response = await fetch(url, options);
-                this.data = await response.json();
-                this.news = this.data["Top-Headlines"];
-                console.log(this.data);
-                console.log(this.news)
+                const response = await axios.request(options);
+                this.data = response.data;
+                this.news = response.data.news;
             } catch (error) {
                 console.error(error);
             }
-        }
+        },
+        updateInputValues(newValue1, newValue2) {
+            this.location = newValue1;
+            this.category = newValue2;
+            this.setNews()
+        },
 
-    }
+
+    },
+
 
 })
