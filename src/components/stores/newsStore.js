@@ -26,7 +26,7 @@ export const useNewsStore = defineStore({
                     query: 'AI',
                     page: 3,
                     time_bounded: true,
-                    from_date: '01/10/2023',
+                    from_date: '30/09/2023',
                     to_date: '01/10/2023',
                     location: this.location,
                     category: this.category,
