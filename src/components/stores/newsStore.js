@@ -38,6 +38,8 @@ export const useNewsStore = defineStore({
                 const response = await axios.request(options);
                 this.data = response.data;
                 this.news = response.data.news;
+                console.log(this.location + 1)
+                console.log(this.category + 1)
             } catch (error) {
                 console.error(error);
             }
@@ -45,6 +47,8 @@ export const useNewsStore = defineStore({
         updateInputValues(newValue1, newValue2) {
             this.location = newValue1;
             this.category = newValue2;
+            console.log(this.location)
+            console.log(this.category)
             this.setNews()
         },
 

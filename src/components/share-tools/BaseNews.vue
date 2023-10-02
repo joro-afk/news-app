@@ -50,9 +50,12 @@ export default {
 
   setup() {
     const news = useNewsStore();
-
+    const locationValue = "";
+    const categoryValue = "";
     return {
       news,
+      locationValue,
+      categoryValue,
     };
   },
   props: {
