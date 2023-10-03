@@ -5,14 +5,14 @@
 
 <script>
 import BaseLayout from "../src/components/layout/BaseLayout.vue";
-// import { useNewsStore } from "../src/components/stores/newsStore";
+ import { useNewsStore } from "../src/components/stores/newsStore";
 
 export default {
   setup() {
-    // const news = useNewsStore();
-    // news.setNews();
+     const news = useNewsStore();
+     news.setNews();
     return {
-      // news,
+       news,
     };
   },
   components: {
