@@ -40,6 +40,7 @@ export const useNewsStore = defineStore({
                 this.news = response.data.news;
             } catch (error) {
                 console.error(error);
+                this.setNews()
             }
         },
         updateInputValues(newValue1, newValue2) {
