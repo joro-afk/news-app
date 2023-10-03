@@ -26,7 +26,7 @@ export const useNewsStore = defineStore({
                     query: 'AI',
                     page: 3,
                     time_bounded: true,
-                    from_date: '30/09/2023',
+                    from_date: '25/09/2023',
                     to_date: '01/10/2023',
                     location: this.location,
                     category: this.category,
@@ -38,8 +38,6 @@ export const useNewsStore = defineStore({
                 const response = await axios.request(options);
                 this.data = response.data;
                 this.news = response.data.news;
-                console.log(this.location + 1)
-                console.log(this.category + 1)
             } catch (error) {
                 console.error(error);
             }
@@ -47,8 +45,6 @@ export const useNewsStore = defineStore({
         updateInputValues(newValue1, newValue2) {
             this.location = newValue1;
             this.category = newValue2;
-            console.log(this.location)
-            console.log(this.category)
             this.setNews()
         },
 
