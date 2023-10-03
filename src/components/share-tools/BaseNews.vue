@@ -29,7 +29,6 @@
             <div>{{ stories.date }}</div>
           </div>
           <div class="content">
-            <img :src="stories.image" alt="" class="content-img" />
             <div class="content-text">{{ stories.body }}</div>
           </div>
           <div class="content-button">
