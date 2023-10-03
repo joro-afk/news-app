@@ -13,12 +13,12 @@
           placeholder="Choose Category"
         />
       </div>
-      <button
+      <!-- <button
         class="button-search"
         @click="news.updateInputValues(locationValue, categoryValue)"
       >
         Search
-      </button>
+      </button> -->
     </div>
     <div class="news-list-container">
       <li v-for="stories in news.news" :key="stories" class="news-list">
