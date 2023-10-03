@@ -58,11 +58,5 @@ export default {
       categoryValue,
     };
   },
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/logo.png"),
-    },
-  },
 };
 </script>
