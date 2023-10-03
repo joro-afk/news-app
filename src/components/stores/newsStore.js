@@ -42,11 +42,11 @@ export const useNewsStore = defineStore({
                 console.error(error);
             }
         },
-        updateInputValues(newValue1, newValue2) {
-            this.location = newValue1;
-            this.category = newValue2;
-            this.setNews()
-        },
+        // updateInputValues(newValue1, newValue2) {
+        //     this.location = newValue1;
+        //     this.category = newValue2;
+        //     this.setNews()
+        // },
 
 
     },
