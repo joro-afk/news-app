@@ -48,7 +48,6 @@ export const useNewsStore = defineStore({
             this.setNews()
         },
 
-
     },
 
 
