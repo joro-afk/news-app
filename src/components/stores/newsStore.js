@@ -35,17 +35,22 @@ export const useNewsStore = defineStore({
             };
 
             try {
+
                 const response = await axios.request(options);
                 this.data = response.data;
                 this.news = response.data.news;
+
             } catch (error) {
                 console.error(error);
                 this.setNews()
             }
         },
         updateInputValues(newValue1, newValue2) {
+            this.news = ''
             this.location = newValue1;
             this.category = newValue2;
+            console.log(this.location)
+            console.log(this.category)
             this.setNews()
         },
 

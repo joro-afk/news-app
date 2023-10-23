@@ -20,7 +20,8 @@
         Search
       </button>
     </div>
-    <div class="news-list-container">
+
+    <div class="news-list-container" v-if="news.news != ''">
       <li v-for="stories in news.news" :key="stories" class="news-list">
         <div class="news-container">
           <div class="news-title-container">{{ stories.title }}</div>
@@ -39,14 +40,20 @@
         </div>
       </li>
     </div>
+    <div class="loader" v-else>
+      <fulfilling-square-spinner :animation-duration="4000" :size="80" />
+    </div>
   </div>
 </template>
 
 <script>
 import { useNewsStore } from "../stores/newsStore";
+import { FulfillingSquareSpinner } from "epic-spinners";
 export default {
   name: "BaseNews",
-
+  components: {
+    FulfillingSquareSpinner,
+  },
   setup() {
     const news = useNewsStore();
     const locationValue = "";
