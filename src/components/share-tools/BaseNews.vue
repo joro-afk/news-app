@@ -13,10 +13,21 @@
             v-model="categoryValue"
             placeholder="Choose Category"
           />
+          <div class="dateChoose">
+            <input type="date" v-model="from_date" />
+            <input type="date" v-model="to_date" />
+          </div>
         </div>
         <button
           class="button-search"
-          @click="news.updateInputValues(locationValue, categoryValue)"
+          @click="
+            news.updateInputValues(
+              locationValue,
+              categoryValue,
+              from_date,
+              to_date
+            )
+          "
         >
           Search
         </button>
@@ -61,10 +72,14 @@ export default {
     const news = useNewsStore();
     const locationValue = "";
     const categoryValue = "";
+    const from_date = "";
+    const to_date = "";
     return {
       news,
       locationValue,
       categoryValue,
+      from_date,
+      to_date,
     };
   },
 };

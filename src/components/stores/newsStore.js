@@ -9,6 +9,8 @@ export const useNewsStore = defineStore({
             news: '',
             location: '',
             category: '',
+            from_date: '',
+            to_date: '',
         }
     },
 
@@ -26,8 +28,8 @@ export const useNewsStore = defineStore({
                     query: 'AI',
                     page: 3,
                     time_bounded: true,
-                    from_date: '25/09/2023',
-                    to_date: '01/10/2023',
+                    from_date: this.from_date,
+                    to_date: this.to_date,
                     location: this.location,
                     category: this.category,
                     source: ''
@@ -45,12 +47,16 @@ export const useNewsStore = defineStore({
                 this.setNews()
             }
         },
-        updateInputValues(newValue1, newValue2) {
+        updateInputValues(newValue1, newValue2, newValue3, newValue4) {
             this.news = ''
             this.location = newValue1;
             this.category = newValue2;
-            console.log(this.location)
-            console.log(this.category)
+            let firstDate = newValue3.split('-');
+            let secondDate = newValue4.split('-');
+            this.from_date= firstDate[2] + '/' + firstDate[1] + '/' + firstDate[0];
+            this.to_date = secondDate[2] + '/' + secondDate[1] + '/' + secondDate[0];
+            console.log(this.from_date)
+            console.log(this.to_date)
             this.setNews()
         },
 
@@ -58,3 +64,4 @@ export const useNewsStore = defineStore({
 
 
 })
+

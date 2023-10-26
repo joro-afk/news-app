@@ -104,12 +104,19 @@ footer {
     margin-bottom: .5rem;
 }
 
-.searcher-inputs>input {
+.searcher-inputs>input,
+.dateChoose>input {
     margin: 0.5rem;
     border-radius: .5rem;
     font-size: 1rem;
     padding: .25rem;
     border: 1px solid #fff;
+}
+
+.dateChoose {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .button-search {
