@@ -5,25 +5,30 @@
         <div class="searcher-inputs">
           <input
             type="text"
-            v-model="locationValue"
-            placeholder="Choose Location"
-          />
-          <input
-            type="text"
-            v-model="categoryValue"
-            placeholder="Choose Category"
+            v-model="subjectValue"
+            placeholder="Subject e.g.:IA"
           />
           <div class="dateChoose">
-            <input type="date" v-model="from_date" />
-            <input type="date" v-model="to_date" />
+            <input
+              type="date"
+              v-model="from_date"
+              min="2020-01-01"
+              :max="today"
+            />
+            <input
+              type="date"
+              v-model="to_date"
+              min="2020-01-01"
+              :max="today"
+            />
           </div>
         </div>
         <button
           class="button-search"
           @click="
             news.updateInputValues(
-              locationValue,
-              categoryValue,
+           
+              subjectValue,
               from_date,
               to_date
             )
@@ -31,6 +36,7 @@
         >
           Search
         </button>
+        
       </div>
 
       <div class="news-list-container">
@@ -69,18 +75,36 @@ export default {
     FulfillingSquareSpinner,
   },
   setup() {
-    const news = useNewsStore();
-    const locationValue = "";
-    const categoryValue = "";
-    const from_date = "";
-    const to_date = "";
+    const news = useNewsStore(),
+      today = "",
+
+      subjectValue = "",
+      from_date = "",
+      to_date = "";
     return {
       news,
-      locationValue,
-      categoryValue,
+   
+      subjectValue,
       from_date,
       to_date,
+      today,
     };
+  },
+  mounted() {
+    this.getDate();
+  },
+  updated() {
+    this.getDate();
+  },
+
+  methods: {
+    getDate() {
+      const date = new Date();
+      let year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let day = date.getDate();
+      this.today = year + "-" + month + "-" + day;
+    },
   },
 };
 </script>
