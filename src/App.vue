@@ -1,18 +1,22 @@
 <template>
-  
   <BaseLayout />
 </template>
 
 <script>
+import { onMounted } from "vue";
 import BaseLayout from "../src/components/layout/BaseLayout.vue";
- import { useNewsStore } from "../src/components/stores/newsStore";
+import { useNewsStore } from "../src/components/stores/newsStore";
 
 export default {
   setup() {
-     const news = useNewsStore();
-     news.setNews();
+    const news = useNewsStore();
+
+    onMounted(() => {
+      news.fetchNews();
+    });
+
     return {
-       news,
+      news,
     };
   },
   components: {
@@ -22,5 +26,5 @@ export default {
 </script>
 
 <style>
-@import "@/assets/style.css"; 
+@import "@/assets/style.css";
 </style>

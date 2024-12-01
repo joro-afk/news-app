@@ -1,333 +1,291 @@
 :root {
-    --heightHeader: 3rem;
-    --heightFooter: 1.5rem;
-    --paddingMain: 1.5rem;
+  --heightHeader: 3rem;
+  --heightFooter: 1.5rem;
+  --paddingMain: 1.5rem;
+  --primary-color: #052962;
+  --secondary-color: #041f4a;
+  --button-bg: #fff;
+  --button-shadow: 2px 2px 4px #000000, -2px -2px 4px #c6ebf5;
+  --small-width: 100px;
 }
-
-
-
-@font-face {
-    font-family: 'made_tommy_softlight';
-    src: url('made_tommy_soft_light_personal_use-webfont.woff2') format('woff2'),
-        url('made_tommy_soft_light_personal_use-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'soccer_leagueitalic';
-    src: url('soccer-league.italic-webfont.woff2') format('woff2'),
-        url('soccer-league.italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-
 
 body,
 h1 {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  color: #fff;
 }
 
 main {
-    padding: var(--paddingMain);
-    background-color: #000;
-    background-color: #0093E9;
-    background-image: linear-gradient(90deg, #80D0C7 0%, #0093E9 100%);
-    min-height: calc(100vh - 10.5rem);
+  padding: var(--paddingMain);
+  background-color: var(--primary-color);
+  min-height: calc(100vh - 10.5rem);
 }
 
-@media only screen and (max-width: 429px) {
-    main {
-        min-height: calc(100vh - 11.5rem);
-    }
-}
-
-@media only screen and (max-width: 329px) {
-    main {
-        min-height: calc(100vh - 13.5rem);
-    }
-}
-
-
-
-footer,
-header {
-    position: relative;
-    width: 100%;
-    margin: 0.75rem 0;
-    text-align: center;
-    font-family: 'soccer_leagueitalic';
+header,
+footer {
+  position: relative;
+  width: 100%;
+  padding: 0.75rem 0;
+  text-align: center;
+  font-family: var(--font-secondary);
+  background-color: var(--secondary-color);
 }
 
 header {
-    font-size: 1.75em;
-    letter-spacing: 1px;
-    min-height: var(--heightHeader);
+  font-size: 1.75em;
+  letter-spacing: 1px;
+  min-height: var(--heightHeader);
 }
 
 footer {
-    min-height: var(--heightFooter);
-    font-size: 0.8em;
+  min-height: var(--heightFooter);
+  font-size: 0.8em;
 }
 
-.title-container {
-    width: 100%;
-    text-align: center
+.title-container,
+.home {
+  width: 100%;
+  text-align: center;
 }
 
 .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .searcher {
-    width: 80%;
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 80%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.searcher-inputs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: .5rem;
+.searcher-inputs,
+.dateChoose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
-.searcher-inputs>input,
-.dateChoose>input {
-    margin: 0.5rem;
-    border-radius: .25rem;
-    font-size: 1rem;
-    padding: .25rem;
-    border: 1px solid #fff;
-    min-width: 100px;
+.searcher-inputs > input,
+.dateChoose > input {
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border: 1px solid #fff;
+  min-width: var(--small-width);
 }
 
 .dateChoose {
-    display: flex;
-    justify-content: space-evenly;
-}
-@media only screen and (max-width:400px) {
-    .dateChoose{
-       flex-direction: column;
-    }
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.button-search,.button-clear {
-    max-width: 5rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    padding: 0.25rem 0.25rem;
-    box-shadow: 2px 2px 4px #000000, -2px -2px 4px #c6ebf5;
-    background-color: #fff;
-    border: none;
+@media only screen and (max-width: 400px) {
+  .dateChoose {
+    flex-direction: column;
+  }
 }
 
-.button-search{
-    margin-bottom: 0.5rem;
+.image-aspect-ratio {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
 }
-
 
 .news-list-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.nlcd {
-    display: flex !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .news-list {
-    list-style: none;
-    width: 100%;
-    margin-bottom: 1rem;
-    box-shadow: 6px 6px 5px #000000,
-        -2px -2px 4px #c6ebf5;
-    border-radius: 1rem;
+  list-style: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-shadow: 6px 6px 5px #000000, -2px -2px 4px #c6ebf5;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
 }
 
-@media only screen and (min-width:768px) {
-    .news-list {
-        width: 45%
-    }
+@media only screen and (min-width: 768px) {
+  .news-list {
+    width: 45%;
+  }
 }
 
-@media only screen and (min-width:1920px) {
-    .news-list {
-        width: 30%
-    }
+@media only screen and (min-width: 1920px) {
+  .news-list {
+    width: 30%;
+  }
 }
 
 .news-container {
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
-    padding: 1rem;
-    border: solid .125rem transparent;
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  padding: 1rem;
+  border: solid 0.125rem transparent;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@media only screen and (max-width:350px) {
-    .news-container {
-        padding: .5rem;
-    }
+@media only screen and (max-width: 350px) {
+  .news-container {
+    padding: 0.5rem;
+  }
 }
 
 .news-title-container {
-    font-family: 'soccer_leagueitalic';
-    margin: .5rem 0;
-    font-size: 1.5em;
-    text-align: center;
-    line-height: 1;
-    min-height: 3rem;
-}
-
-.news-img {
-    width: 100%;
+  font-family: var(--font-secondary);
+  margin: 0.5rem 0;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 1;
+  min-height: 3rem;
 }
 
 .content-container {
-    font-family: 'made_tommy_softlight';
-    font-size: .85em;
-    margin: .5rem 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  font-family: var(--font-main);
+  font-size: 0.85em;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .source {
-    margin-inline-end: 0.5rem;
-}
-
-.content {
-    margin-top: .5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.content-img {
-    height: 6rem;
-    width: auto;
+  margin-inline-end: 0.5rem;
 }
 
 .content-text {
-    margin-top: .5rem;
-    font-family: 'made_tommy_softlight';
+  margin-top: 0.5rem;
 }
 
 .content-button {
-    display: flex;
-    justify-content: center;
-    margin-top: .5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
 }
 
 .news-button {
-    background-color: #fff;
-    border: none;
-    border-bottom-right-radius: .5rem;
-    border-top-left-radius: .5rem;
-    padding: .25rem .25rem;
-    border-bottom: solid 3px #000;
-    border-right: solid 3px #000;
-    border-top: solid 1px #bcbcbc;
-    border-left: solid 1px #bcbcbc;
-
+  background-color: var(--button-bg);
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: solid 1px #bcbcbc;
+  box-shadow: var(--button-shadow);
+  transition: all 0.3s ease;
 }
 
-.news-button>a {
-    text-decoration: none;
-    color: #000;
+.news-button > a {
+  text-decoration: none;
+  color: #000;
 }
 
 .loader {
-    position: absolute;
-    min-height: calc(100vh - 10.5rem);
-    width: calc(100vw - 3rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  min-height: calc(100vh - 10.5rem);
+  width: calc(100vw - 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .loader-text {
-    font-family: 'made_tommy_softlight';
-    margin-top: 1rem;
-    color: #fff;
-}
-
-.ld {
-    display: none !important;
+  font-family: var(--font-main);
+  margin-top: 1rem;
+  color: #fff;
 }
 
 .fulfilling-square-spinner,
 .fulfilling-square-spinner * {
-    box-sizing: border-box;
-}
-
-.fulfilling-square-spinner .spinner-inner {
-    vertical-align: top;
-    display: inline-block;
-    background-color: #fff !important;
-    width: 100%;
-    opacity: 1;
-    animation: fulfilling-square-spinner-inner-animation 4s infinite ease-in;
-}
-
-@keyframes fulfilling-square-spinner-animation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(180deg);
-    }
-
-    50% {
-        transform: rotate(180deg);
-    }
-
-    75% {
-        transform: rotate(360deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
+  box-sizing: border-box;
 }
 
 @keyframes fulfilling-square-spinner-inner-animation {
-    0% {
-        height: 0%;
-    }
+  0%,
+  25% {
+    height: 0%;
+  }
+  50%,
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
 
-    25% {
-        height: 0%;
-    }
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-    50% {
-        height: 100%;
-    }
+li {
+  background-color: var(--secondary-color);
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 6px #000000, -2px -2px 4px #c6ebf5;
+  transition: all 0.3s ease;
+}
 
-    75% {
-        height: 100%;
-    }
+li:hover {
+  transform: scale(1.02);
+}
 
-    100% {
-        height: 0%;
-    }
+h1 {
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.image-aspect-ratio {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+p:last-child {
+  font-size: 0.85rem;
+  color: #c6ebf5;
+}
+
+.error {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+div[v-if="newsStore.loading"] {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+div[v-if="!newsStore.loading && !newsStore.error"] {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
