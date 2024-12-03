@@ -34,7 +34,7 @@ const searchQuery = ref('');
 
 
 if (!newsStore.articles.length) {
-  newsStore.fetchNews('dji'); 
+  newsStore.fetchNews(''); 
 }
 
 
