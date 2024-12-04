@@ -21,10 +21,10 @@ export const useNewsStore = defineStore("news", {
       this.error = null;
       this.articles = [];
 
-      // Asegúrate de codificar la query para evitar errores con caracteres especiales
+   
       const encodedQuery = encodeURIComponent(query);
 
-      // Construir la URL correctamente con la query codificada
+      
       const url = `https://gnews.io/api/v4/search?q=${encodedQuery}&lang=en&country=us&max=10&apikey=${this.apiKey}`;
 
       try {
@@ -36,11 +36,11 @@ export const useNewsStore = defineStore("news", {
           throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
 
-        // Parsear la respuesta JSON
+    
         const data = await response.json();
         console.log("Respuesta de la API:", data);
 
-        // Verificar si los artículos están presentes en la respuesta
+       
         if (data && Array.isArray(data.articles) && data.articles.length > 0) {
           this.articles = data.articles;
         } else {
@@ -49,11 +49,11 @@ export const useNewsStore = defineStore("news", {
           );
         }
       } catch (err) {
-        // Registrar cualquier error
+       
         console.error("Error al cargar las noticias:", err);
         this.error = err.message || "Failed to fetch news";
       } finally {
-        // Restablecer el estado de carga
+        
         console.log("Solicitud completada, cambiando estado de loading.");
         this.loading = false;
       }
